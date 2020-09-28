@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="wrapper">
+      <header>
+        <div class="logo">
+          <img src="img/Boolflix_logo.png" alt="">
+        </div>
+        <div class="utility">
+          <input id="text-search" type="text" name="" value="" placeholder="Cerca...">
+          <button class="search" type="button" name="button">Cerca</button>
+        </div>
+      </header>
+
+
+
+        <section class="prewiew">
+          <p><i class="fas fa-video"></i></p>
+          <h1>CERCA I TUOI FILM O  SERIE TV PREFERITE</h1>
+        </section>
+
+
+
+        <h2 class="movies-title">Movies</h2>
+
+        <div class="slide film">
+          <ul id="list-movies">
+          </ul>
+          <div class="scroll">
+            <div class="options prima prev"><i class="fas fa-angle-left"></i></div>
+            <div class="options prima next"><i class="fas fa-angle-right"></i></div>
+          </div>
+      </div>
+
+
+        <h2 class="serie">Series</h2>
+        <div class="slide tv">
+          <ul id="list-tv">
+
+          </ul>
+          <div class="scroll">
+            <div class="options seconda prev"><i class="fas fa-angle-left"></i></div>
+            <div class="options seconda next"><i class="fas fa-angle-right"></i></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  <footer><h2>Make with love from Danilo</h2></footer>
+  <script id="movie-template" type="text/x-handlebars-template">
+    <li class="movie" data-id="{{id}}">
+      <img class="poster" src="{{{poster_path}}}" alt="">
+      <div class="info">
+      <h3>{{title}} </h3>
+      <h3>{{media_type}}</h3>
+      <h3 id="titolo-originale">Titolo Originale: {{title_orginal}} {{title_original}}</h4>
+      <p>Lingua Originale: {{{lang}}} </p>
+      <p class="test"> Voto: <span class="stelle"> {{{vote}}} </span></p>
+
+      <h5>Cast</h5>
+      <ul class="cast"></ul>
+      <h5>Generi</h5>
+      <ul class="genres"></ul>
+      </div>
+    </li>
+
+  </script>
+
+  <script id="cast-template" type="text/x-handlebars-template">
+    <li>{{name}}</li>
+  </script>
+
+  <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
